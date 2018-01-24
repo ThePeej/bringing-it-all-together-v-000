@@ -61,6 +61,10 @@ class Dog
     new_dog
   end
 
+  def find_or_create_by
+
+  end
+
 
 
   def update
