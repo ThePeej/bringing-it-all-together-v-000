@@ -81,8 +81,10 @@ class Dog
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)[0]
 
     if dog
-      self.new_from_db(dog)
-    binding.pry
+      dog = self.new_from_db(dog)
+    else
+      dog = self.create(dog_hash)
+    end
   end
 
   def update
