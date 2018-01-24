@@ -69,7 +69,7 @@ class Dog
 
   end
 
-  def find_by_name(name)
+  def self.find_by_name(name)
     row = DB[:conn].execute("SELECT * WHERE name = ? LIMIT 1", name)[0]
 
     binding.pry
