@@ -73,7 +73,9 @@ class Dog
     row = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? LIMIT 1", name)[0]
 
     binding.pry
-    self.new()
+    dog = self.new(row[1],row[2])
+    dog.id = row[0]
+    dog
   end
 
   def update
