@@ -32,6 +32,7 @@ class Dog
   end
 
   def save
+    binding.pry
     if self.id != nil
       self.update
     else
