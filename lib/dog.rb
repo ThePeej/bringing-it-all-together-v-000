@@ -69,6 +69,10 @@ class Dog
 
   end
 
+  def find_by_name
+
+  end
+
 
 
   def update
