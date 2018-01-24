@@ -71,7 +71,10 @@ class Dog
 
   def self.find_by_name(name)
     row = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? LIMIT 1", name)[0]
-    dog = self.new(row[1],row[2])
+    dog_hash = {}
+    dog_hash[:name] = row[1]
+    dog_hash[:breed] = row[2]
+    dog = self.new(dog_hash)
     dog.id = row[0]
     dog
   end
