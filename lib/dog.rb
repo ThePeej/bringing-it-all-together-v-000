@@ -65,8 +65,13 @@ class Dog
 
   end
 
-  def self.new_from_db
-
+  def self.new_from_db(row)
+    dog_hash = {}
+    dog_hash[:name] = row[1]
+    dog_hash[:breed] = row[2]
+    dog = self.new(dog_hash)
+    dog.id = row[0]
+    dog
   end
 
   def self.find_by_name(name)
