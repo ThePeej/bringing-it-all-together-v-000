@@ -85,6 +85,7 @@ class Dog
     else
       dog = self.create(dog_hash)
     end
+    dog
   end
 
   def update
