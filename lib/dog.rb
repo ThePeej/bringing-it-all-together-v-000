@@ -81,7 +81,7 @@ class Dog
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)[0]
 
     if dog
-
+      self.new_from_db(dog)
     binding.pry
   end
 
