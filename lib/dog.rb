@@ -61,11 +61,11 @@ class Dog
     new_dog
   end
 
-  def find_or_create_by
+  def self.find_or_create_by
 
   end
 
-  def new_from_db
+  def self.new_from_db
 
   end
 
