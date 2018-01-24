@@ -61,11 +61,7 @@ class Dog
     new_dog
   end
 
-  def self.find_or_create_by(arg)
-    binding.pry
-  end
-
-  def self.new_from_db(row)
+    def self.new_from_db(row)
     dog_hash = {}
     dog_hash[:name] = row[1]
     dog_hash[:breed] = row[2]
@@ -77,6 +73,12 @@ class Dog
   def self.find_by_name(name)
     row = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? LIMIT 1", name)[0]
     self.new_from_db(row)
+  end
+
+  def self.find_or_create_by(dog_hash)
+    name = dog_hash[:name]
+    breed = dog_hash[:breed]
+    binding.pry
   end
 
   def update
